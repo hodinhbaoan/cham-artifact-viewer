@@ -1,0 +1,94 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e9ded0; /* sandstone background */
+  margin: 0;
+  padding: 20px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Cham_Museum_Danang_Interior.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+}
+
+.app {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 5vw;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: 2px solid #c2a477;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #6b4f34;
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  border-bottom: 2px solid #c2a477;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+  color: #5c4734;
+  font-weight: bold;
+}
+
+select, input, button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #c2a477;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f3efe7;
+  color: #3c2f24;
+}
+
+button {
+  background: #a47e4c;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #845f38;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* ✅ Responsive tweaks for small screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  select, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
