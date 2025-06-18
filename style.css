@@ -69,7 +69,6 @@ button:hover {
   justify-content: space-between;
 }
 
-/* ✅ Responsive tweaks for small screens */
 @media (max-width: 600px) {
   h1 {
     font-size: 20px;
