@@ -5,9 +5,11 @@ const artifactMap = {
   'CHAM02': 'html2.html'
 };
 
+// Buttons
 document.getElementById('bleButton').addEventListener('click', scanForBeacons);
 document.getElementById('qrButton').addEventListener('click', startQrScanner);
 
+// BLE scan
 async function scanForBeacons() {
   try {
     const device = await navigator.bluetooth.requestDevice({
@@ -23,6 +25,7 @@ async function scanForBeacons() {
   }
 }
 
+// QR scan
 let html5QrcodeScanner;
 
 function startQrScanner() {
@@ -38,7 +41,7 @@ function startQrScanner() {
   html5QrcodeScanner = new Html5Qrcode("reader");
 
   html5QrcodeScanner.start(
-    { facingMode: "environment" },
+    { facingMode: "environment" }, // back camera
     { fps: 10, qrbox: 250 },
     qrCodeMessage => {
       if (artifactMap[qrCodeMessage]) {
@@ -53,3 +56,35 @@ function startQrScanner() {
     }
   ).catch(err => alert('QR scanner error: ' + err));
 }
+
+// Translation system
+const translations = {
+  en: {
+    title: "Welcome!",
+    desc: "Tap BLE or QR to get exhibit info."
+  },
+  vi: {
+    title: "Chào mừng!",
+    desc: "Chạm vào BLE hoặc mã QR để xem thông tin hiện vật."
+  },
+  ko: {
+    title: "환영합니다!",
+    desc: "BLE 또는 QR을 탭하여 전시 정보 보기"
+  },
+  zh: {
+    title: "欢迎！",
+    desc: "点击 BLE 或二维码以获取展品信息"
+  }
+};
+
+function updateLanguage(lang) {
+  const langData = translations[lang] || translations.en;
+  document.getElementById("title").textContent = langData.title;
+  document.getElementById("desc").textContent = langData.desc;
+}
+
+document.getElementById("language").addEventListener("change", function () {
+  updateLanguage(this.value);
+});
+
+updateLanguage("en"); // default
