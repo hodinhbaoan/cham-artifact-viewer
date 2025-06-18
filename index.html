@@ -9,9 +9,9 @@
 </head>
 <body>
   <div class="app">
-    <h1>Cham Museum</h1>
+    <h1 id="header">Cham Museum</h1>
 
-    <label for="language">🌐 Choose Language:</label>
+    <label for="language" id="lang-label">🌐 Choose Language:</label>
     <select id="language">
       <option value="en">English</option>
       <option value="vi">Vietnamese</option>
@@ -29,8 +29,8 @@
       <button id="qrButton">📷 Scan QR</button>
     </div>
 
-    <div id="reader" style="display: none; margin-top: 20px;"></div>
-    <div id="qr-result" class="qr-status" style="margin-top: 10px;"></div>
+    <div id="reader" style="display: none;"></div>
+    <div id="qr-result" class="qr-status"></div>
   </div>
 
   <script src="app.js"></script>
